@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android Class</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_text_hint">Enter a message</string>
+    <string name="button_submit">Submit</string>
+    <string name="button_info">Get Info</string>
+    <string name="edit_text">Edit Text Button</string>
+    <string name="title_activity_display_mesage">DisplayMesageActivity</string>
+    <string name="title_activity_display_info">DisplayInfoActivity</string>
+    <string name="info_name">Sayer Bartlett</string>
+    <string name="info_class">CS 310 Winter 2015</string>
+    <string name="info_assignment">Assignment 1</string>
+
+</resources>
