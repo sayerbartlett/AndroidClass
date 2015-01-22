@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity
   public boolean onCreateOptionsMenu(Menu menu)
   {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_main, menu);
+    getMenuInflater().inflate(R.menu.main_activity_actions, menu);
     return true;
   }
 
@@ -35,6 +35,13 @@ public class MainActivity extends ActionBarActivity
     // automatically handle clicks on the Home/Up button, so long
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
+
+    switch(id)
+    {
+      case R.id.action_search:
+        openSearch();
+        return true;
+    }
 
     //noinspection SimplifiableIfStatement
     if (id == R.id.action_settings)
@@ -60,6 +67,12 @@ public class MainActivity extends ActionBarActivity
   {
     startActivity(new Intent(this, DisplayInfoActivity.class));
   }
+
+  public void openSearch()
+  {
+
+  }
+
 
 
 }
