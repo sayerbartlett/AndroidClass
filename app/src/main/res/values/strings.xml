@@ -14,5 +14,8 @@
     <string name="info_class">CS 310 Winter 2015</string>
     <string name="info_assignment">Assignment 1</string>
     <string name="action_search">Search</string>
+    <string name="action_like">Punch It!</string>
+    <string name="button_click_counter">Press 25 times for a SURPRISE!!</string>
+    <string name="text_view_clicks">Clicks so far: </string>
 
 </resources>

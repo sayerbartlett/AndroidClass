@@ -1,11 +1,13 @@
 package com.example.sayerbartlett.androidclass;
 
 import android.content.Intent;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+
 
 
 public class DisplayMessageActivity extends ActionBarActivity
@@ -32,7 +34,12 @@ public class DisplayMessageActivity extends ActionBarActivity
   public boolean onCreateOptionsMenu(Menu menu)
   {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.menu_display_mesage, menu);
+    getMenuInflater().inflate(R.menu.main_activity_actions, menu);
+
+    MenuItem searchItem = menu.findItem(R.id.action_search);
+    //        SearchView searchView = (SearchView)
+    MenuItemCompat.getActionView(searchItem);
+
     return true;
   }
 
@@ -44,6 +51,17 @@ public class DisplayMessageActivity extends ActionBarActivity
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
 
+    switch(id)
+    {
+      case R.id.action_search:
+        return true;
+
+
+      case R.id.action_like:
+        likeText();
+        return true;
+    }
+
     //noinspection SimplifiableIfStatement
     if (id == R.id.action_settings)
     {
@@ -51,5 +69,12 @@ public class DisplayMessageActivity extends ActionBarActivity
     }
 
     return super.onOptionsItemSelected(item);
+  }
+
+  public void likeText()
+  {
+    TextView textView = new TextView(this);
+    textView.setTextSize(50);
+    textView.setText("One does not simply MAKE an app...");
   }
 }

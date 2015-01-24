@@ -1,16 +1,21 @@
 package com.example.sayerbartlett.androidclass;
 
 import android.content.Intent;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ShareActionProvider;
+import android.widget.TextView;
+
 
 
 public class MainActivity extends ActionBarActivity
 {
+
   public final static String EXTRA_MESSAGE = "com.mycompany.android class.MESSAGE";
   @Override
   protected void onCreate(Bundle savedInstanceState)
@@ -25,6 +30,11 @@ public class MainActivity extends ActionBarActivity
   {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.main_activity_actions, menu);
+
+    MenuItem searchItem = menu.findItem(R.id.action_search);
+    //        SearchView searchView = (SearchView)
+    MenuItemCompat.getActionView(searchItem);
+
     return true;
   }
 
@@ -39,7 +49,11 @@ public class MainActivity extends ActionBarActivity
     switch(id)
     {
       case R.id.action_search:
-        openSearch();
+        return true;
+
+
+      case R.id.action_like:
+        likeText();
         return true;
     }
 
@@ -68,9 +82,15 @@ public class MainActivity extends ActionBarActivity
     startActivity(new Intent(this, DisplayInfoActivity.class));
   }
 
-  public void openSearch()
-  {
 
+
+  public void likeText()
+  {
+    TextView textView = new TextView(this);
+    textView.setTextSize(50);
+    textView.setText("One does not simply MAKE an app...");
+
+    setContentView(textView);
   }
 
 
